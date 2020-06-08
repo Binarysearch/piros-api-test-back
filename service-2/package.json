@@ -1,0 +1,43 @@
+{
+  "name": "@piros/tssf",
+  "version": "0.0.7",
+  "description": "",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "start": "tsc && node ./dist/index.js",
+    "prueba": "tsc && node dist/ng-codegen/generate.js src/index.ts ./generated-code",
+    "build": "tsc",
+    "gen-ng-code": "tsc && node dist/ng-codegen/generate.js ./src/example/test-controller.ts",
+    "pre-publish": "node prepublish.js",
+    "publish:lib": "npm run build && npm run pre-publish && npm publish dist/ --access=public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Binarysearch/tssf.git"
+  },
+  "author": "Antonio Ruiz Gutierrez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Binarysearch/tssf/issues"
+  },
+  "homepage": "https://github.com/Binarysearch/tssf#readme",
+  "devDependencies": {
+    "ts-loader": "^7.0.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "@piros/ioc": "0.0.5",
+    "@types/express": "^4.17.6",
+    "@types/uuid": "^7.0.2",
+    "@types/ws": "^7.2.4",
+    "express": "^4.17.1",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.5.5",
+    "typescript": "^3.8.3",
+    "uuid": "^7.0.3",
+    "ws": "^7.2.3"
+  }
+}
