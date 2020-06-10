@@ -21,6 +21,11 @@ export class TestController {
         return of(body + '-2');
     }
 
+    @Post('test-post-error')
+    public errorPost(body: string): Observable<string> {
+        return throwError({ httpStatusCode: 400, description: body });
+    }
+
     @Request('send-something-for-valid-channel')
     public send(session: Session, body: string): Observable<string> {
         this.notification.sendNotification('valid-channel', 'hola');

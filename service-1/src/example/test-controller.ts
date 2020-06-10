@@ -24,6 +24,11 @@ export class TestController {
         return of(body.text + '-1');
     }
 
+    @Post('test-post-error')
+    public errorPost(body: string): Observable<string> {
+        return throwError({ httpStatusCode: 400, description: body });
+    }
+
     @Request('delayed-echo-message')
     public echo2(session: Session, body: string): Observable<string> {
         return new Observable(obs=>{
