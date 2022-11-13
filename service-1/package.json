@@ -20,7 +20,7 @@
   "devDependencies": {
     "ts-loader": "^7.0.0",
     "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11",
+    "webpack-cli": "^3.3.12",
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
